@@ -3,7 +3,7 @@
 
 html {
     padding: 30px;
-    padding-top: 50px;
+    padding-top: 200px;
     padding-bottom: 100px;
 }
 body {
@@ -21,6 +21,30 @@ h1, h2 {
     font-family: 'Oswald', sans-serif;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+nav *{
+    margin: 0;
+}
+
+.spacer {
+    flex: 1;
+    margin: -20px -10px;
+}
+
 header {
     background-color: #4B2790;
     padding: 20px;
@@ -28,7 +52,7 @@ header {
     margin: 0 -20px;
 }
 
-#logo {
+#logo img {
     border: none;
 }
 
@@ -57,7 +81,7 @@ img {
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
+    body, nav {
         background-color: #222;
         color: #ddd;
     }
@@ -68,4 +92,23 @@ img {
 }
 
 
+@media (max-width: 600px) {
+    nav {
+        font-size: 0.8em;
+    }
+    #logo {
+        display: none;
+    }
+}
 
+@media (max-width: 400px) {
+    nav {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    nav .spacer {
+        display: none;
+    }
+}
